@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estacionamiento</title>
+</head>
+<body>
+  <h1>Gestión de Estacionamiento</h1>
+  <pre id="vehiculos"></pre>
+  <script>
+    async function obtenerVehiculos() {
+      const res = await fetch("/vehiculos");
+      const data = await res.json();
+      document.getElementById("vehiculos").innerText = JSON.stringify(data, null, 2);
+    }
+    obtenerVehiculos();
+  </script>
+</body>
+</html>
